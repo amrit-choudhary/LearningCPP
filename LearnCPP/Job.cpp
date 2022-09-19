@@ -7,9 +7,9 @@ void Job::Init(GameManager *managerOut) {
 	gameState = managerOut->gameState;
 }
 
-void Job::Work(double time) {
-	std::cout << "Work done";
-}
+//void Job::Work(double time) {
+//	std::cout << "Work done";
+//}
 
 void WoodCutterJob::Work(double time) {
 	gameState->wood += gameSettings->woodRate * time;
@@ -41,7 +41,7 @@ void BuilderJob::Work(double time) {
 
 void SmelterJob::Work(double time) {
 	if (gameState->wood > gameSettings->coinsInWoodRate * time
-		&& gameState->stone > gameSettings->coinsInGoldOreRate * time) {
+		&& gameState->goldOre > gameSettings->coinsInGoldOreRate * time) {
 		gameState->wood -= gameSettings->coinsInWoodRate * time;
 		gameState->goldOre -= gameSettings->coinsInGoldOreRate * time;
 		gameState->coins += gameSettings->coinsOutRate * time;

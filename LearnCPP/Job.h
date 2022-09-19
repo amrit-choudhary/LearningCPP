@@ -21,7 +21,7 @@ public:
 	void Init(GameManager *managerPtr);
 	GameSettings* gameSettings;
 	GameState* gameState;
-	virtual void Work(double time);
+	virtual void Work(double time) = 0;
 };
 
 class WoodCutterJob : public Job {
